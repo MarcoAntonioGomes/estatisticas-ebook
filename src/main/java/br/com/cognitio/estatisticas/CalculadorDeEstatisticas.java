@@ -9,7 +9,7 @@ import org.jsoup.nodes.Document;
 
 import java.text.Normalizer;
 import java.util.Map;
-import java.util.TreeMap;
+
 
 public class CalculadorDeEstatisticas implements Plugin {
 
@@ -22,7 +22,7 @@ public class CalculadorDeEstatisticas implements Plugin {
     @Override
     public void aposGeracao(Ebook ebook) {
 
-        Map<String, Integer> contagemDePalavras = new TreeMap<>();
+        var contagemDePalavras = new ContagemDePalavras();
 
 
         for(Capitulo capitulo : ebook.getCapitulos() ){
@@ -35,7 +35,7 @@ public class CalculadorDeEstatisticas implements Plugin {
             for(String palavra : palavras){
 
                 String emMaiusculas = palavra.toUpperCase();
-                contagemDePalavras.put(emMaiusculas, 1);
+                contagemDePalavras.adicionaPalavra(emMaiusculas);
 
             }
 
