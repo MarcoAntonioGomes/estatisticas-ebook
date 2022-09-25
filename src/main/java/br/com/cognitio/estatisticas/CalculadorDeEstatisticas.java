@@ -3,7 +3,7 @@ package br.com.cognitio.estatisticas;
 
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
-import cotuba.plugin.Plugin;
+import cotuba.plugin.AoFinalizarGeracao;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -11,13 +11,9 @@ import java.text.Normalizer;
 import java.util.Map;
 
 
-public class CalculadorDeEstatisticas implements Plugin {
+public class CalculadorDeEstatisticas implements AoFinalizarGeracao {
 
 
-    @Override
-    public String aposRenderizacao(String html) {
-        return html;
-    }
 
     @Override
     public void aposGeracao(Ebook ebook) {
